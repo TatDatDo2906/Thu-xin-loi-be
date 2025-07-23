@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thư Xin Lỗi 💌</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      color: #e91e63;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #thu {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border: 2px dashed #e91e63;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1> Bé viết một cho với anh nhé 💕</h1>
+
+  <label>Anh thường gọi em là:</label>
+  <input type="text" id="cachgoi" placeholder="Bé yêu, công chúa, vợ iu...">
+
+  <label>Kỷ niệm đáng nhớ nhất của tụi mình:</label>
+  <input type="text" id="kyniem" placeholder="Ví dụ: bắt cuaaa, sốp pingg...">
+
+  <label>Điều mà em mong anh sẽ làm tốt hơn:</label>
+  <input type="text" id="dieumong" placeholder="Ví dụ: quan tâm em mỗi ngày...">
+
+  <label>Những lời nói em muốn nói với anh:</label>
+  <input type="text" id="loinhan" placeholder="Ví dụ: em yêu anhhh...">
+
+  <button onclick="hienThu()">Tạo lá thư 💌</button>
+
+  <div id="thu"></div>
+
+  <script>
+    function hienThu() {
+      const goi = document.getElementById("cachgoi").value.trim();
+      const kyniem = document.getElementById("kyniem").value.trim();
+      const dieumong = document.getElementById("dieumong").value.trim();
+      const loinhan = document.getElementById("loinhan").value.trim();
+
+      if (!goi || !kyniem || !dieumong || !loinhan) {
+        alert("Em điền đủ các ô nhé 💕");
+        return;
+      }
+
+      const ngay = new Date().toLocaleDateString("vi-VN", {
+        weekday: "long", year: "numeric", month: "long", day: "numeric"
+      });
+
+      const thu = 
+`Thư Xin Lỗi 💕
+Dành cho người anh thương nhất
+${goi} 💕
+
+Em biết không, đối với anh, em là điều tuyệt vời nhất từng xuất hiện trong cuộc đời anh. Từ khi có em bên cạnh, mọi thứ đều có ý nghĩa và đầy màu sắc hơn. Dù ngày có khó khăn đến đâu, chỉ cần nhìn thấy em và ở bên cạnh em, mọi thứ lại trở nên tốt đẹp.
+
+Anh không bao giờ muốn làm em buồn. Mỗi lần chúng ta có xích mích khiến em buồn và khóc, anh cảm thấy vô cùng hối hận trong lòng, vì điều duy nhất anh muốn là thấy em cười và hạnh phúc khi bên anh. Anh xin lỗi em nhiều lắm.
+
+Anh cảm thấy vô cùng tự trách mình khi lại để em buồn nhiều lần chỉ vì bản thân anh vô tâm, anh thương em nhiều lắm, anh chỉ mong có được một chút cơ hội được sửa chữa lỗi lầm anh đã gây ra và được quan tâm chăm sóc em nhiều hơn, được đi tiếp cùng em trên chặng đường phía trước.
+
+Khi mà ${kyniem}, lúc được đi cùng em, bên cạnh em, anh cảm thấy vô cùng hạnh phúc.
+Đó là lúc anh nhận ra rằng mình chắc chắn sẽ cố gắng trở thành một người xứng đáng để có thể nắm tay em cùng nhau đi xa hơn nữa.
+
+Anh biết đôi khi anh chưa đủ hoàn hảo, dễ làm em buồn vì anh, nhưng anh sẽ cố gắng thay đổi bản thân vì em, để anh có thể được bên cạnh em mãi. Anh sẽ cố gắng ${dieumong}.
+
+Và anh hứa sẽ luôn cố gắng trở nên tốt mỗi ngày hơn vì em, vì tình yêu của hai chúng ta.
+Tình yêu của em truyền cảm hứng cho anh trở thành phiên bản tốt nhất của chính mình, và anh hứa sẽ luôn luôn bên cạnh em và trân trọng những gì chúng ta có.
+
+Anh sẽ luôn nhớ lời này từ em: "${loinhan}" 💖
+Anh yêu em 💕
+
+Ngày viết thư: ${ngay}
+Yêu em,
+Người luôn nghĩ về em 💕
+
+💖✨💕`;
+
+      document.getElementById("thu").innerText = thu;
+    }
+  </script>
+
+</body>
+</html>
